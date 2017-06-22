@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>dog_app</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>dog_app</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11,8 +13,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,6 +1109,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2535,6 +2538,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,6 +3029,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8755,9 +8760,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,14 +8962,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8990,16 +8986,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9136,9 +9122,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9228,9 +9211,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9275,9 +9255,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9574,7 +9551,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9595,6 +9571,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11265,7 +11246,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11577,7 +11558,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11591,9 +11571,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11654,10 +11631,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11668,11 +11643,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11855,18 +11828,14 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Using TensorFlow backend.
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>There are 133 total dog categories.
 There are 8351 total dog images.
@@ -11916,9 +11885,7 @@ There are 836 test dog images.
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>There are 13233 total human images.
 </pre>
@@ -11986,18 +11953,14 @@ There are 836 test dog images.
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Number of faces detected: 1
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -13424,9 +13387,7 @@ t3Zrt/ap7NZZ3Nqt3dqnsltncWu3dmufym6dxa3d2q19Kvt/AWGG8Pq0A9rVAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Percentage of human faces correctly detected: 100.0%
 Percentage of dogs incorrectly detected: 11.0%
@@ -13641,9 +13602,7 @@ $$<p>Here, <code>nb_samples</code> is the number of samples, or number of images
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Percentage of human faces incorrectly detected: 3.0%
 Percentage of dogs correctly detected: 100.0%
@@ -13737,9 +13696,7 @@ Percentage of dogs correctly detected: 100.0%
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100%|██████████| 6680/6680 [01:20&lt;00:00, 82.54it/s] 
 100%|██████████| 835/835 [00:09&lt;00:00, 90.47it/s] 
@@ -13765,6 +13722,8 @@ Percentage of dogs correctly detected: 100.0%
 <p>We have imported some Python modules to get you started, but feel free to import as many modules as you need.  If you end up getting stuck, here's a hint that specifies a model that trains relatively fast on CPU and attains &gt;1% test accuracy in 5 epochs:</p>
 <p><img src="images/sample_cnn.png" alt="Sample CNN"></p>
 <p><strong>Question 4:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  If you chose to use the hinted architecture above, describe why you think that CNN architecture should work well for the image classification task.</p>
+<p><strong>Explanation:</strong> Since image recognition is the use case, Convolutional Neural Networks (CNNs) are the best choice of model. Thus, the input layer is a Convolutional layer. The input layer has an input_shape conforming to the input data shape. Colour images have 3 layers, hence a depth of 3. A general guideline to architecting a convolutional layered model, is to double the number of filters for each convolutional layer, add padding to each layer and use the ReLu activation function. Between each convolutional layer is a max pooling layer. For each matrix/grid of the specified pool size, the maximum value is deduced and output to the next layer. This is used to reduce the dimensions for the next layer and prioritise specific features/pixels in a pool. The layer before the output layer is a global average pooling layer. This takes the previous output and deduces the overall average per filter, this reduces the dimensions into a structure that the fully connected output layer can use as input. Finally, the fully connected output layer uses the softmax activation function, which is perfect for categorization. The final layer's output shape is the number of categories required (found in the sample data).</p>
+<p>This architecture is sound, as the number of filters is increased with every convolution layer, which increases the amount of detail recognizable by the model (trainable parameters), but the dimensions are reduced at each step. Further more, the dimensions are reduced by the max pooling layers, but the prominent details/features/pixels are prioritized since it is a max pooling layer. The Global Average pooling layer reduces the dimensions of previous output to a structure usable by the final fully connected output layer. The final fully connected layer outputs a shape matching the number of categories required and uses the softmax function, which is suitable for determining categories. This is why this architecture works well for images classification.</p>
 <p><strong>Answer:</strong></p>
 
 </div>
@@ -13815,9 +13774,7 @@ Percentage of dogs correctly detected: 100.0%
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -13913,9 +13870,7 @@ _________________________________________________________________
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/5
@@ -13937,9 +13892,7 @@ Epoch 5/5
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[15]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -14005,9 +13958,7 @@ Epoch 5/5
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test accuracy: 2.6316%
 </pre>
@@ -14076,9 +14027,7 @@ Epoch 5/5
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -14151,9 +14100,7 @@ _________________________________________________________________
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/20
@@ -14220,9 +14167,7 @@ Epoch 20/20
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[21]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -14288,9 +14233,7 @@ Epoch 20/20
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test accuracy: 45.9330%
 </pre>
@@ -14390,9 +14333,7 @@ test_{network} = bottleneck_features['test']</code></pre>
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Downloading Bottleneck Features
 Download Complete!
@@ -14446,9 +14387,7 @@ Download Complete!
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -14484,6 +14423,8 @@ _________________________________________________________________
 <p>Instead of removing the last fully connected layer from the ResNet50 model, the bottleneck features of the ResNet50 model are used for training and validation on the new model. The ResNet50 bottleneck features' output shape is used as the input to the new model's input layer.
 The input layer is a Global Average Pooling layer to reduce the dimensions used by the output layer.
 The output layer is a fully connected layer using the softmax activation function to categorize the data.</p>
+<p>This archticure is effective, as it uses the best weights previously found when training the entire image net using the ResNet50 architecture. Using this training as the base for the new architecture, is a great way to reduce the complexity of training needed. Since the training for this type of dataset has been mostly completed, the only aspect required is adding an output layer that conforms to the categories required, i.e. 133 categories using the softmax activation function, which is appropriate for image classification. However, the fully connected output layer requires the bottleneck output shape to be restructured, hence a global average pooling layer is added before the output layer to reduce the dimensions into a structure that can be used by the output layer. The model is then retrained to suit the new dataset.</p>
+<p>This architecture is effective, as it uses the previously well trained ResNet50 weights with the ImageNet dataset, a dataset similar to the dog and human dataset. Hence, the input to the new output layers is contextual and relevant to the dog and human dataset. The architecture then tailors the output to the dog and human dataset, meaning all previous training implies the model is knowledgable of such features and the new output layers make sure that the new dataset is correctly categorized.</p>
 <p>Previously, the model consisted of a flatten layer to reduce the input to a structure usable by the fully connected layers. There were more fully connected layers, halving the number of nodes each time. This actually produced the same accuracy, however, it produced many more trainable parameters - unnecessarily so.</p>
 
 </div>
@@ -14548,9 +14489,7 @@ The output layer is a fully connected layer using the softmax activation functio
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/20
@@ -14617,9 +14556,7 @@ Epoch 20/20
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[28]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -14686,9 +14623,7 @@ Epoch 20/20
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test accuracy: 82.1770%
 </pre>
@@ -14753,9 +14688,7 @@ Epoch 20/20
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[31]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -14837,18 +14770,14 @@ Epoch 20/20
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hello, Dog!
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -17281,9 +17210,7 @@ V2TS7mQJAAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>You look like a ...
 Labrador_retriever
@@ -17324,18 +17251,14 @@ Labrador_retriever
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hello, Dog!
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -20052,9 +19975,7 @@ AAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>You look like a ...
 Irish_water_spaniel
@@ -20064,9 +19985,7 @@ Hello, Dog!
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -21638,9 +21557,7 @@ FreC/xbetbgV/LfwrsWt4L+Fdy1uBf8tvGtxK/hv4V2L/w+XMA+NvJlPiwAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>You look like a ...
 Brittany
@@ -21650,9 +21567,7 @@ Hello, Dog!
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -24406,9 +24321,7 @@ AABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>You look like a ...
 Curly-coated_retriever
@@ -24418,9 +24331,7 @@ Hello, Human!
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -25706,9 +25617,7 @@ CJ0yhlM6pVM6QqeM4ZRO6ZSO0P8Hk0XwYXTF2AQAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>You look like a ...
 Xoloitzcuintli
@@ -25718,9 +25627,7 @@ Hello, Human!
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -26571,9 +26478,7 @@ tQlrF4XWWmttwtpFobXWWpuw/wUYCnBTQZZzqgAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>You look like a ...
 English_toy_spaniel
@@ -26583,9 +26488,7 @@ Hmmm, I can&#39;t tell what you are!
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -27454,9 +27357,7 @@ Bcccc2yT/V+gCnebzeOy1wAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>You look like a ...
 Silky_terrier
@@ -27502,8 +27403,4 @@ In the case of an animated picture, the detection algorithms were unable to dete
     </div>
   </div>
 </body>
-
- 
-
-
 </html>
